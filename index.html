@@ -280,9 +280,9 @@
             <div class="step active" id="loginScreen">
                 <div class="login-screen">
                     <h2>📋 Veri Toplama Başlangıç</h2>
-                    <p>Lütfen bilgilerinizi girin</p>
+                    <p>Lütfen bölge bilgilerinizi girin</p>
                     <div class="input-group">
-                        <input type="text" id="userNameInput" placeholder="Ad Soyad" />
+                        <input type="text" id="userNameInput" placeholder="Bölge kodu" />
                     </div>
                     <button class="btn btn-primary" onclick="startDataCollection()">Başla</button>
                 </div>
@@ -448,7 +448,7 @@
             const name = nameInput.value.trim();
             
             if (name === '') {
-                alert('Lütfen ad soyad giriniz');
+                alert('Lütfen bölge bilgilerinizi giriniz');
                 nameInput.focus();
                 return;
             }
