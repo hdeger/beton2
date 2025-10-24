@@ -460,11 +460,14 @@
             currentStep = 1;
             document.getElementById('step1').classList.add('active');
             
-            setTimeout(() => {
-                if (map) {
-                    map.invalidateSize();
-                }
-            }, 100);
+                setTimeout(() => {
+        if (map) {
+            map.invalidateSize();
+            if (myLocation) {
+                map.setView([myLocation.lat, myLocation.lng], 18);
+            }
+        }
+    }, 100);
         }
 
         // Harita başlatma
@@ -720,9 +723,6 @@
             document.getElementById('coordsDisplay').innerHTML = 'Konum seçilmedi';
             document.getElementById('nextBtn1').disabled = true;
             
-            if (myLocation) {
-                map.setView([myLocation.lat, myLocation.lng], 18);
-            }
             
             document.getElementById('photoPreview').style.display = 'none';
             document.getElementById('startCameraBtn').style.display = 'block';
