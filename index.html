@@ -333,47 +333,8 @@
                     <h2>📋 Veri Toplama Başlangıç</h2>
                     <p>Lütfen bölge bilgilerinizi girin</p>
                     <div class="input-group">
-<select id="regionSelect" style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 16px; background: white; cursor: pointer;">
-    <option value="">Bölge Seçiniz...</option>
-    <option value="A1">A1</option>
-    <option value="A2">A2</option>
-    <option value="A3">A3</option>
-    <option value="A4">A4</option>
-    <option value="A5">A5</option>
-    <option value="A6">A6</option>
-    <option value="A7">A7</option>
-    <option value="A8">A8</option>
-    <option value="A9">A9</option>
-    <option value="A10">A10</option>
-    <option value="A11">A11</option>
-    <option value="K12">K12</option>
-    <option value="A13">A13</option>
-    <option value="A14">A14</option>
-    <option value="K15">K15</option>
-    <option value="A16">A16</option>
-    <option value="K17">K17</option>
-    <option value="K18">K18</option>
-    <option value="K19">K19</option>
-    <option value="K20">K20</option>
-    <option value="A21">A21</option>
-    <option value="K22">K22</option>
-    <option value="A23">A23</option>
-    <option value="A24">A24</option>
-    <option value="A25">A25</option>
-    <option value="A26">A26</option>
-    <option value="K27">K27</option>
-    <option value="K28">K28</option>
-    <option value="A29">A29</option>
-    <option value="A30">A30</option>
-    <option value="K31">K31</option>
-    <option value="A32">A32</option>
-    <option value="A33">A33</option>
-    <option value="A34">A34</option>
-    <option value="K35">K35</option>
-    <option value="K36">K36</option>
-    <option value="A37">A37</option>
-    <option value="K38">K38</option>
-</select>                    </div>
+                        <input type="text" id="userNameInput" placeholder="Bölge kodu veya adınız" />
+                    </div>
                     <button class="btn btn-primary" onclick="startDataCollection()">Başla</button>
                 </div>
             </div>
@@ -567,16 +528,16 @@
             gisInited = true;
         }
 
-function startDataCollection() {
-    const regionSelect = document.getElementById('regionSelect');
-    const selectedRegion = regionSelect.value;
-    
-    if (selectedRegion === '') {
-        alert('Lütfen bir bölge seçiniz');
-        regionSelect.focus();
-        return;
-    }  
-          
+        function startDataCollection() {
+            const nameInput = document.getElementById('userNameInput');
+            const name = nameInput.value.trim();
+            
+            if (name === '') {
+                alert('Lütfen bölge bilgilerinizi giriniz');
+                nameInput.focus();
+                return;
+            }
+            
             userName = name;
             currentData.userName = userName;
             
